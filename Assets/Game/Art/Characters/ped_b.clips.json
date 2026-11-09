@@ -1,0 +1,706 @@
+{
+ "clips": [
+  {
+   "role": "Idle",
+   "clip": "FemaleBasicLocomotionIdle",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": true,
+   "inplace": false,
+   "speed": 0.0
+  },
+  {
+   "role": "Walk",
+   "clip": "FemaleBasicLocomotionWalking",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": true,
+   "inplace": false,
+   "speed": 1.643
+  },
+  {
+   "role": "Jog",
+   "clip": "FemaleBasicLocomotionRunning",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": true,
+   "inplace": false,
+   "speed": 3.697
+  },
+  {
+   "role": "Run",
+   "clip": "StandardRun",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": true,
+   "inplace": false,
+   "speed": 4.334
+  },
+  {
+   "role": "Sprint",
+   "clip": "LocomotionSprint",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": true,
+   "inplace": false,
+   "speed": 6.054
+  },
+  {
+   "role": "CrouchIdle",
+   "clip": "CrouchingIdle",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": true,
+   "inplace": false,
+   "speed": 0.0
+  },
+  {
+   "role": "CrouchWalk",
+   "clip": "CrouchedWalking",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": true,
+   "inplace": false,
+   "speed": 1.398
+  },
+  {
+   "role": "JumpStart",
+   "clip": "LocomotionJump",
+   "start": 0.115,
+   "end": 0.42,
+   "loop": false,
+   "inplace": false,
+   "speed": 0.0
+  },
+  {
+   "role": "JumpLoop",
+   "clip": "LocomotionJump",
+   "start": 0.42,
+   "end": 0.56,
+   "loop": false,
+   "inplace": false,
+   "speed": 0.0
+  },
+  {
+   "role": "JumpLand",
+   "clip": "LocomotionJump",
+   "start": 0.575,
+   "end": 0.92,
+   "loop": false,
+   "inplace": false,
+   "speed": 0.0
+  },
+  {
+   "role": "Roll",
+   "clip": "SprintingForwardRoll",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": false,
+   "inplace": true,
+   "speed": 4.875
+  },
+  {
+   "role": "Death",
+   "clip": "DeathFromFrontHeadshot",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": false,
+   "inplace": false,
+   "speed": 0.137
+  },
+  {
+   "role": "Driving",
+   "clip": "VehiclesDriving",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": true,
+   "inplace": false,
+   "speed": 0.0
+  },
+  {
+   "role": "ArmedIdle",
+   "clip": "ProRifleIdle",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": true,
+   "inplace": true,
+   "speed": 0.0
+  },
+  {
+   "role": "ArmedCrouchIdle",
+   "clip": "PistolKneelingIdle",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": true,
+   "inplace": true,
+   "speed": 0.0
+  },
+  {
+   "role": "KneelDown",
+   "clip": "PistolStandToKneel",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": false,
+   "inplace": true,
+   "speed": 0.088
+  },
+  {
+   "role": "KneelUp",
+   "clip": "PistolKneelToStand",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": false,
+   "inplace": true,
+   "speed": 0.053
+  },
+  {
+   "role": "ArmedWalkF",
+   "clip": "WalkForward",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": true,
+   "inplace": true,
+   "speed": 1.898
+  },
+  {
+   "role": "ArmedRunF",
+   "clip": "RunForward",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": true,
+   "inplace": true,
+   "speed": 4.746
+  },
+  {
+   "role": "ArmedSprintF",
+   "clip": "SprintForward",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": true,
+   "inplace": true,
+   "speed": 7.118
+  },
+  {
+   "role": "ArmedCrouchF",
+   "clip": "WalkCrouchingForward",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": true,
+   "inplace": true,
+   "speed": 2.015
+  },
+  {
+   "role": "ArmedWalkFL",
+   "clip": "WalkForwardLeft",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": true,
+   "inplace": true,
+   "speed": 1.898
+  },
+  {
+   "role": "ArmedRunFL",
+   "clip": "RunForwardLeft",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": true,
+   "inplace": true,
+   "speed": 4.746
+  },
+  {
+   "role": "ArmedSprintFL",
+   "clip": "SprintForwardLeft",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": true,
+   "inplace": true,
+   "speed": 7.118
+  },
+  {
+   "role": "ArmedCrouchFL",
+   "clip": "WalkCrouchingForwardLeft",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": true,
+   "inplace": true,
+   "speed": 2.015
+  },
+  {
+   "role": "ArmedWalkL",
+   "clip": "WalkLeft",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": true,
+   "inplace": true,
+   "speed": 1.898
+  },
+  {
+   "role": "ArmedRunL",
+   "clip": "RunLeft",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": true,
+   "inplace": true,
+   "speed": 4.746
+  },
+  {
+   "role": "ArmedSprintL",
+   "clip": "SprintLeft",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": true,
+   "inplace": true,
+   "speed": 7.118
+  },
+  {
+   "role": "ArmedCrouchL",
+   "clip": "WalkCrouchingLeft",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": true,
+   "inplace": true,
+   "speed": 1.948
+  },
+  {
+   "role": "ArmedWalkBL",
+   "clip": "WalkBackwardLeft",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": true,
+   "inplace": true,
+   "speed": 1.898
+  },
+  {
+   "role": "ArmedRunBL",
+   "clip": "RunBackwardLeft",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": true,
+   "inplace": true,
+   "speed": 4.746
+  },
+  {
+   "role": "ArmedSprintBL",
+   "clip": "SprintBackwardLeft",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": true,
+   "inplace": true,
+   "speed": 7.118
+  },
+  {
+   "role": "ArmedCrouchBL",
+   "clip": "WalkCrouchingBackwardLeft",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": true,
+   "inplace": true,
+   "speed": 2.015
+  },
+  {
+   "role": "ArmedWalkB",
+   "clip": "WalkBackward",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": true,
+   "inplace": true,
+   "speed": 1.904
+  },
+  {
+   "role": "ArmedRunB",
+   "clip": "RunBackward",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": true,
+   "inplace": true,
+   "speed": 4.746
+  },
+  {
+   "role": "ArmedSprintB",
+   "clip": "SprintBackward",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": true,
+   "inplace": true,
+   "speed": 7.118
+  },
+  {
+   "role": "ArmedCrouchB",
+   "clip": "WalkCrouchingBackward",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": true,
+   "inplace": true,
+   "speed": 2.015
+  },
+  {
+   "role": "ArmedWalkBR",
+   "clip": "WalkBackwardRight",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": true,
+   "inplace": true,
+   "speed": 1.898
+  },
+  {
+   "role": "ArmedRunBR",
+   "clip": "RunBackwardRight",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": true,
+   "inplace": true,
+   "speed": 4.746
+  },
+  {
+   "role": "ArmedSprintBR",
+   "clip": "SprintBackwardRight",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": true,
+   "inplace": true,
+   "speed": 7.118
+  },
+  {
+   "role": "ArmedCrouchBR",
+   "clip": "WalkCrouchingBackwardRight",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": true,
+   "inplace": true,
+   "speed": 2.015
+  },
+  {
+   "role": "ArmedWalkR",
+   "clip": "WalkRight",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": true,
+   "inplace": true,
+   "speed": 1.898
+  },
+  {
+   "role": "ArmedRunR",
+   "clip": "RunRight",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": true,
+   "inplace": true,
+   "speed": 4.746
+  },
+  {
+   "role": "ArmedSprintR",
+   "clip": "SprintRight",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": true,
+   "inplace": true,
+   "speed": 7.118
+  },
+  {
+   "role": "ArmedCrouchR",
+   "clip": "WalkCrouchingRight",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": true,
+   "inplace": true,
+   "speed": 2.015
+  },
+  {
+   "role": "ArmedWalkFR",
+   "clip": "WalkForwardRight",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": true,
+   "inplace": true,
+   "speed": 1.898
+  },
+  {
+   "role": "ArmedRunFR",
+   "clip": "RunForwardRight",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": true,
+   "inplace": true,
+   "speed": 4.746
+  },
+  {
+   "role": "ArmedSprintFR",
+   "clip": "SprintForwardRight",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": true,
+   "inplace": true,
+   "speed": 7.118
+  },
+  {
+   "role": "ArmedCrouchFR",
+   "clip": "WalkCrouchingForwardRight",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": true,
+   "inplace": true,
+   "speed": 2.015
+  },
+  {
+   "role": "DeathFront",
+   "clip": "DeathFromTheFront",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": false,
+   "inplace": false,
+   "speed": 0.311
+  },
+  {
+   "role": "DeathBack",
+   "clip": "DeathFromTheBack",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": false,
+   "inplace": false,
+   "speed": 0.388
+  },
+  {
+   "role": "DeathHeadFront",
+   "clip": "DeathFromFrontHeadshot",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": false,
+   "inplace": false,
+   "speed": 0.137
+  },
+  {
+   "role": "DeathHeadBack",
+   "clip": "DeathFromBackHeadshot",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": false,
+   "inplace": false,
+   "speed": 0.261
+  },
+  {
+   "role": "DeathRight",
+   "clip": "DeathFromRight",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": false,
+   "inplace": false,
+   "speed": 0.268
+  },
+  {
+   "role": "DeathCrouch",
+   "clip": "DeathCrouchingHeadshotFront",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": false,
+   "inplace": false,
+   "speed": 0.5
+  },
+  {
+   "role": "KnockFall",
+   "clip": "DeathFromFrontHeadshot",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": false,
+   "inplace": true,
+   "speed": 0.137
+  },
+  {
+   "role": "GetUp",
+   "clip": "ZombieStandUp",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": false,
+   "inplace": true,
+   "speed": 0.033
+  },
+  {
+   "role": "ThrowGrenade",
+   "clip": "TossGrenade",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": false,
+   "inplace": true,
+   "speed": 0.004
+  },
+  {
+   "role": "DodgeLeft",
+   "clip": "StandingDodgeLeft",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": false,
+   "inplace": false,
+   "speed": 1.895
+  },
+  {
+   "role": "DodgeRight",
+   "clip": "StandingDodgeRight",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": false,
+   "inplace": false,
+   "speed": 1.947
+  },
+  {
+   "role": "InjuredIdle",
+   "clip": "InjuredIdle",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": true,
+   "inplace": false,
+   "speed": 0.001
+  },
+  {
+   "role": "InjuredWalk",
+   "clip": "InjuredWalk",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": true,
+   "inplace": true,
+   "speed": 1.254
+  },
+  {
+   "role": "DrunkIdle",
+   "clip": "DrunkIdle",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": true,
+   "inplace": false,
+   "speed": 0.0
+  },
+  {
+   "role": "DrunkWalk",
+   "clip": "DrunkWalk",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": true,
+   "inplace": true,
+   "speed": 0.85
+  },
+  {
+   "role": "DrunkRun",
+   "clip": "DrunkRunForward",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": true,
+   "inplace": true,
+   "speed": 2.546
+  },
+  {
+   "role": "Gesture0",
+   "clip": "HappyHandGesture",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": false,
+   "inplace": true,
+   "speed": 0.0
+  },
+  {
+   "role": "Gesture1",
+   "clip": "Acknowledging",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": false,
+   "inplace": true,
+   "speed": 0.001
+  },
+  {
+   "role": "Gesture2",
+   "clip": "HeadNodYes",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": false,
+   "inplace": true,
+   "speed": 0.0
+  },
+  {
+   "role": "Gesture3",
+   "clip": "ShakingHeadNo",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": false,
+   "inplace": true,
+   "speed": 0.001
+  },
+  {
+   "role": "Gesture4",
+   "clip": "AngryGesture",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": false,
+   "inplace": true,
+   "speed": 0.0
+  },
+  {
+   "role": "Gesture5",
+   "clip": "LookAwayGesture",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": false,
+   "inplace": true,
+   "speed": 0.003
+  },
+  {
+   "role": "Gesture6",
+   "clip": "RelievedSigh",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": false,
+   "inplace": true,
+   "speed": 0.0
+  },
+  {
+   "role": "Gesture7",
+   "clip": "UnarmedIdleLookingVer1",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": false,
+   "inplace": true,
+   "speed": 0.0
+  },
+  {
+   "role": "Punch0",
+   "clip": "LeadJab",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": false,
+   "inplace": false,
+   "speed": 0.0
+  },
+  {
+   "role": "Punch1",
+   "clip": "CrossPunch",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": false,
+   "inplace": false,
+   "speed": 0.0
+  },
+  {
+   "role": "Punch2",
+   "clip": "HookPunch",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": false,
+   "inplace": false,
+   "speed": 0.0
+  },
+  {
+   "role": "Punch3",
+   "clip": "Uppercut",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": false,
+   "inplace": false,
+   "speed": 0.0
+  },
+  {
+   "role": "Punch4",
+   "clip": "BodyJabCross",
+   "start": 0.0,
+   "end": 1.0,
+   "loop": false,
+   "inplace": false,
+   "speed": 0.0
+  }
+ ]
+}

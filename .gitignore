@@ -1,0 +1,33 @@
+# Unity caches and per-user state
+/Library/
+/Temp/
+/Obj/
+/obj/
+/Logs/
+/UserSettings/
+/MemoryCaptures/
+/Recordings/
+
+# Builds and test output (the player, verify / lab pictures, recordings)
+/Build/
+
+# IDE files (Unity regenerates them)
+/.vs/
+/.idea/
+*.csproj
+*.slnx
+*.sln
+*.user
+*.suo
+
+# The asset and build scripts are kept out of the repository
+/tools/
+__pycache__/
+*.pyc
+
+# Rebuilt by Tools > Great Heist Auto > Build Everything from Assets/Game/Art and the scripts: about 2.8 GB of baked clips,
+# city meshes, prefabs, animators, and the scenes built from them.
+/Assets/Game/Generated/
+/Assets/Game/Generated.meta
+/Assets/Game/Scenes/
+/Assets/Game/Scenes.meta
