@@ -13,7 +13,7 @@ namespace GreatHeistAuto.EditorTools
         public const string Gen = "Assets/Game/Generated";
         public static readonly string[] Characters = { "player", "enemy_a", "enemy_b", "enemy_c", "ped_a", "ped_b" };
         public static readonly string[] Guns = { "pistol_a", "pistol_b", "rifle_a", "rifle_b" };
-        public static readonly string[] Props = { "barrier", "dumpster", "trashcan", "bench", "crates", "car", "car_b", "car_lod", "car_b_lod", "tree_trunk", "streetlamp", "tree", "tree_lod", "grenade" };
+        public static readonly string[] Props = { "barrier", "dumpster", "trashcan", "bench", "crates", "car", "car_b", "car_lod", "car_b_lod", "dacia", "dacia_lod", "oltcit", "oltcit_lod", "trabant", "trabant_lod", "tree_trunk", "streetlamp", "tree", "tree_lod", "grenade" };
         static readonly HashSet<string> Looping = new() { "Idle", "Walk", "Run", "Jog", "Sprint", "CrouchIdle", "CrouchWalk", "JumpLoop", "PistolIdle", "PistolAimNeutral", "Driving" };
 
         public static void EnsureFolder(string path)

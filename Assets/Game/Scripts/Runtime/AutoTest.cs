@@ -492,7 +492,7 @@ namespace GreatHeistAuto
                 v.SetDrivenVisuals(false);
                 v.ForceLit = false;
                 v.enabled = false;
-                if (seen.Count >= 2) break;
+                if (seen.Count >= 5) break;     // every car model: sedan, SUV, Dacia 1310, Oltcit, Trabant
             }
             // Blood on the ground, by day and by night.
             Vector3 spot = p.transform.position + p.transform.forward * 9f;

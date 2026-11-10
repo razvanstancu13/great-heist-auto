@@ -530,6 +530,11 @@ namespace GreatHeistAuto.EditorTools
         {
             new CarSpec { Id = "car", Size = new Vector3(1.85f, 1.45f, 4.5f), WheelRadius = 0.33f, AxleFront = 0.31f, AxleRear = -0.3f, HalfTrack = 0.84f, SeatZ = -0.1f, EyeHeight = 1.13f },
             new CarSpec { Id = "car_b", Size = new Vector3(1.95f, 1.72f, 4.6f), WheelRadius = 0.38f, AxleFront = 0.31f, AxleRear = -0.31f, HalfTrack = 0.89f, SeatZ = -0.05f, EyeHeight = 1.42f },
+            // Real cars, at their factory sizes: Dacia 1310 saloon (4.35 m, wheelbase 2.44 m), Oltcit Club (3.73 m, 2.37 m),
+            // Trabant 601 (3.56 m, 2.02 m).
+            new CarSpec { Id = "dacia", Size = new Vector3(1.64f, 1.44f, 4.35f), WheelRadius = 0.29f, AxleFront = 0.29f, AxleRear = -0.27f, HalfTrack = 0.74f, SeatZ = -0.1f, EyeHeight = 1.12f },
+            new CarSpec { Id = "oltcit", Size = new Vector3(1.54f, 1.43f, 3.73f), WheelRadius = 0.28f, AxleFront = 0.33f, AxleRear = -0.3f, HalfTrack = 0.7f, SeatZ = -0.05f, EyeHeight = 1.12f },
+            new CarSpec { Id = "trabant", Size = new Vector3(1.5f, 1.44f, 3.56f), WheelRadius = 0.28f, AxleFront = 0.29f, AxleRear = -0.28f, HalfTrack = 0.68f, SeatZ = -0.1f, EyeHeight = 1.1f },
         };
 
         /// <summary>A car's mesh brought to its real size, standing on y = 0, with the bonnet along +Z (the roof sits towards the back).</summary>
@@ -561,6 +566,16 @@ namespace GreatHeistAuto.EditorTools
             float cz = (rp.Min(p => p.z) + rp.Max(p => p.z)) * .5f;
             float roofZ = rp.Where(p => p.y > minY0 + h * 0.8f).Average(p => p.z) - cz;
             if (roofZ > 0f) { rot = Quaternion.Euler(0, 180, 0) * rot; rp = pts.Select(p => rot * p).ToArray(); }
+            // Generated cars can come out pitched or rolled: level the body on its four tyres.
+            Vector2 tilt0 = TyreTilt(rp);
+            for (int pass = 0; pass < 2; pass++)
+            {
+                Vector2 t = TyreTilt(rp);
+                rot = Quaternion.Euler(t.x, 0, t.y) * rot;
+                rp = pts.Select(p => rot * p).ToArray();
+            }
+            Vector2 tilt1 = TyreTilt(rp);
+            Debug.Log($"[BUILD] car mesh {fbxName}: levelled pitch {tilt0.x:F2} -> {tilt1.x:F2} deg, roll {tilt0.y:F2} -> {tilt1.y:F2} deg");
             Bounds b = new Bounds(rp[0], Vector3.zero);
             foreach (var p in rp) b.Encapsulate(p);
             var scale = new Vector3(size.x / b.size.x, size.y / b.size.y, size.z / b.size.z);
@@ -573,6 +588,32 @@ namespace GreatHeistAuto.EditorTools
             AssetDatabase.CreateAsset(mesh, assetPath);
             Debug.Log($"[BUILD] car mesh {fbxName}: roof offset {roofZ:F2} ({(roofZ > 0 ? "turned round" : "already facing +Z")}), {src.triangles.Length / 3} tris");
             return mesh;
+        }
+
+        /// <summary>
+        /// The rotation (x = pitch, z = roll, degrees) that brings the bottoms of a car's four tyres onto one level plane. Each
+        /// tyre's bottom is the mean of the lowest points in its quarter of the body, away from the bumpers and the middle,
+        /// so a low spoiler or sill does not count. Points: bonnet along +Z.
+        /// </summary>
+        static Vector2 TyreTilt(Vector3[] p)
+        {
+            float minX = p.Min(q => q.x), maxX = p.Max(q => q.x), minZ = p.Min(q => q.z), maxZ = p.Max(q => q.z);
+            float cx = (minX + maxX) * .5f, cz = (minZ + maxZ) * .5f, hw = (maxX - minX) * .5f, hl = (maxZ - minZ) * .5f;
+            var bottom = new Vector3[4];
+            for (int w = 0; w < 4; w++)
+            {
+                float sx = w % 2 == 0 ? -1f : 1f, sz = w < 2 ? 1f : -1f;
+                var low = p.Where(q => (q.x - cx) * sx > hw * 0.3f && (q.z - cz) * sz > hl * 0.3f && (q.z - cz) * sz < hl * 0.85f)
+                           .OrderBy(q => q.y).Take(8).ToArray();
+                if (low.Length == 0) return Vector2.zero;
+                bottom[w] = new Vector3(low.Average(q => q.x), low.Average(q => q.y), low.Average(q => q.z));
+            }
+            Vector3 front = (bottom[0] + bottom[1]) * .5f, rear = (bottom[2] + bottom[3]) * .5f;
+            Vector3 left = (bottom[0] + bottom[2]) * .5f, right = (bottom[1] + bottom[3]) * .5f;
+            // Positive x tips the bonnet down, positive z lifts the right side: turn each slope back to level.
+            float pitch = Mathf.Atan2(front.y - rear.y, front.z - rear.z) * Mathf.Rad2Deg;
+            float roll = -Mathf.Atan2(right.y - left.y, right.x - left.x) * Mathf.Rad2Deg;
+            return new Vector2(pitch, roll);
         }
 
         static Mesh WheelMesh(string path)

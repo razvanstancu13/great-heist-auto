@@ -453,9 +453,19 @@ namespace GreatHeistAuto.EditorTools
 
         // ---- cars and lamps ----
 
+        /// <summary>How often each car model is parked in the city (shares add up to 1).</summary>
+        static readonly (string model, float share)[] CarMix = { ("car", 0.36f), ("car_b", 0.2f), ("dacia", 0.2f), ("oltcit", 0.12f), ("trabant", 0.12f) };
+
+        string PickCarModel()
+        {
+            float r = R(0, 1);
+            foreach (var (model, share) in CarMix) { if (r < share) return model; r -= share; }
+            return CarMix[0].model;
+        }
+
         void PlaceCar(float x, float z, float yaw)
         {
-            string model = R(0, 1) < 0.6f ? "car" : "car_b";
+            string model = PickCarModel();
             int paint = RI(0, CarTints.Length);
             var go = (GameObject)PrefabUtility.InstantiatePrefab(vehicles[model]);
             go.transform.SetParent(carRoot, false);

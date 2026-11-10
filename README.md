@@ -40,8 +40,10 @@ nothing on top, close-up views, slow motion and frame stepping. The top bar show
 ## How it is built
 
 - **Models:** 1 player, 3 enemies and 2 pedestrians (tinted at runtime: the shader tints low-saturation texels, so clothes change
-  colour and skin does not), 2 pistols, 2 rifles, 2 cars (each with a cheaper distant version), and 7 props.
-- **Cars:** arcade physics on four suspension rays (`Vehicle`). Parked ones are kinematic and cost almost nothing. The game is played in
+  colour and skin does not), 2 pistols, 2 rifles, 5 cars (each with a cheaper distant version: a sedan, an SUV, and three real Eastern Bloc cars,
+  Dacia 1310, Oltcit Club and Trabant 601, generated from photos of the real cars), and 7 props.
+- **Cars:** each generated car is turned to face +Z and levelled on its four tyres when it is baked (`BakeCarMesh`, pitch
+  and roll in the build log), then scaled to its real size. Arcade physics on four suspension rays (`Vehicle`). Parked ones are kinematic and cost almost nothing. The game is played in
   third person only, on foot and driving.
 - **Day and night:** `DayNightCycle` (3 + 3 minutes) drives the sky shader, sun and moon, ambient light, lens flare and every window; only
   the nearest lamps are real lights (`StreetLights`), the rest are drawn glows. `WeatherSystem` brings random fog, rain and lightning.
@@ -75,7 +77,8 @@ LAGP on the author's machine (generating, importing and levelling the art, which
 
 | Script | What it does | Example |
 |---|---|---|
-| `gen_concepts.py` | Concept images for all 3D assets (`assets.json`) | `gen_concepts.py --only car` |
+| `fetch_refs.py` | Photos of real objects (a prop's `refs` in `assets.json`) from Wikimedia Commons, CC0 / public domain / CC BY only, with credits | `fetch_refs.py --only trabant` |
+| `gen_concepts.py` | Concept images for all 3D assets (`assets.json`); a prop with `refs` is drawn by FLUX.3 from its photos | `gen_concepts.py --only car` |
 | `gen_models.py` | Concept to shape, clean, texture, rig or FBX; resumable. Characters: a broken shape (more than 3 pieces after clean) is retried with the next seed, `eyefix` projects an eye photo onto dark blob eyes (`C:\AI\tools\eyefix`), `variant` remakes into new folders | `gen_models.py --only car` |
 | `gen_textures.py` | Tileable textures, sky, logo, menu keyframe, effect sprites | `gen_textures.py --only hedge` |
 | `gen_audio.py` | Sound effects, ambience loop, music loops | `gen_audio.py --only reload` |
@@ -126,6 +129,22 @@ ambience 0.5, footsteps 0.3 or quieter, and 3D sounds fade with distance.
 - The hands' hold on a gun is procedural for every gun (the clips' own arms are replaced by IK); the legs use the Mixamo rifle clips.
 - Sprint, unarmed crouch, jump, roll and driving still use the Quaternius clips: the library has no Mixamo version without a weapon
   in hand yet.
+
+## Reference photos
+
+The Dacia 1310, Oltcit Club and Trabant 601 concepts were drawn by FLUX.3 from these Wikimedia Commons photos
+(`tools/fetch_refs.py`; the photos themselves are not in the repository):
+
+- Dacia 1310: [Dacia (7906583028) (2).jpg](https://commons.wikimedia.org/wiki/File:Dacia_(7906583028)_(2).jpg) and
+  [Dacia (7907510754).jpg](https://commons.wikimedia.org/wiki/File:Dacia_(7907510754).jpg) by Torsten Maue, CC BY 2.0;
+  [Dacia1310.jpg](https://commons.wikimedia.org/wiki/File:Dacia1310.jpg) by Raf24/Sokoban, public domain.
+- Oltcit Club: [Oltcit Auto.jpg](https://commons.wikimedia.org/wiki/File:Oltcit_Auto.jpg), public domain;
+  [OLTCIT CLUB 11 R.JPG](https://commons.wikimedia.org/wiki/File:OLTCIT_CLUB_11_R.JPG) by Kelovy, public domain;
+  [Oltcit side.jpg](https://commons.wikimedia.org/wiki/File:Oltcit_side.jpg) by Artur Heise, CC BY 2.5.
+- Trabant 601: [three-quarter front](https://commons.wikimedia.org/wiki/File:Cream_Trabant_601_S_three-quarter_front_view.jpg),
+  [side](https://commons.wikimedia.org/wiki/File:Cream_Trabant_601_S_side_view.jpg) and
+  [three-quarter back](https://commons.wikimedia.org/wiki/File:Cream_Trabant_601_S_three-quarter_back_view.jpg) views
+  of a cream Trabant 601 S by Renée Kools, CC BY 4.0.
 
 ## License
 
